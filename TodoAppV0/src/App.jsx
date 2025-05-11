@@ -1,27 +1,30 @@
-import { useState } from "react";
+import TodoItems from "./components/TodoItem";
 
 function App() {
-  const [add, setAdd] = useState([""]);
-  const [addDate, setDate] = useState("");
-
-  const addHandler = (e) => {
-    setAdd(e.target.value);
-    setDate(e.target.value);
-  };
-
+  const data = [
+    {
+      title: "Buy Milk",
+      date: "12/3/2003",
+    },
+    {
+      title: "Go to College",
+      date: "12/5/2003",
+    },
+  ];
   return (
     <>
       <h1>Todo App</h1>
 
       <div>
         <div>
-          <input type="text" value={add} placeholder="Enter your text" />
+          <input type="text" placeholder="Enter your text" />
         </div>
         <div>
-          <input type="date" value={addDate} onChange={setDate} />
+          <input type="date" />
         </div>
-        <button onClick={addHandler}>Add</button>
+        <button>Add</button>
         <ul></ul>
+        <TodoItems data={data}></TodoItems>
       </div>
     </>
   );
