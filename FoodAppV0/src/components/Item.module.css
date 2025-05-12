@@ -1,0 +1,14 @@
+.rustyn {
+  color: red;
+}
+.bough {
+  color: green;
+  background-color: black;
+}
+.button {
+  border: 1px solid black;
+  color: green;
+  background: wheat;
+  padding: 5px;
+  margin: 4px;
+}
