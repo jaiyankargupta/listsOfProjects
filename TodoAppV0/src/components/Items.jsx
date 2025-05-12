@@ -1,16 +1,29 @@
 import React from "react";
 
-const Items = ({ data }) => {
+const Items = ({
+  title,
+  dueDate,
+  completeVal,
+  deleteHandler,
+  completeHandler,
+}) => {
   return (
     <div>
-      {data.map((item) => {
-        return (
-          <>
-            <li key={item}>{item.title}</li>
-            <li key={item}>{item.date}</li>
-          </>
-        );
-      })}
+      <span
+        style={{
+          textDecoration: completeVal ? "line-through" : "none",
+        }}
+      >
+        <li>{title}</li>
+        <li>{dueDate}</li>
+      </span>
+
+      <button onClick={() => deleteHandler(title)}>Delete</button>
+      {completeVal ? (
+        <button onClick={() => completeHandler(title)}>Remove Complete</button>
+      ) : (
+        <button onClick={() => completeHandler(title)}> Complete</button>
+      )}
     </div>
   );
 };

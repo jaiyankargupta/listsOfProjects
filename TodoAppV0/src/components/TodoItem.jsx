@@ -1,9 +1,18 @@
 import React from "react";
 import Items from "./items";
-const TodoItem = ({ data }) => {
+const TodoItem = ({ data, deleteHandler, completeHandler }) => {
   return (
     <div>
-      <Items data={data}></Items>
+      {data.map((item, idx) => (
+        <Items
+          key={idx}
+          title={item.title}
+          dueDate={item.date}
+          completeVal={item.completeVal}
+          deleteHandler={deleteHandler}
+          completeHandler={completeHandler}
+        ></Items>
+      ))}
     </div>
   );
 };

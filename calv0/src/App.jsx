@@ -11,7 +11,11 @@ function App() {
       setVal("");
     } else if (item === "=") {
       result = eval(addVal);
-      setVal(result);
+      if (result) {
+        setVal(result);
+      } else {
+        alert("enter valid!");
+      }
     } else {
       const newVal = addVal + item;
       setVal(newVal);
